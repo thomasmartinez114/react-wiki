@@ -1,3 +1,11 @@
+# Installations
+
+npm install bootstrap
+npm install @popperjs/core --save
+npm install sass
+npm install react-router-dom
+npm install react-paginate --save
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
