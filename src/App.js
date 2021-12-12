@@ -8,7 +8,8 @@ import Card from "./components/Card/Card"
 import Pagination from "./components/Pagination/Pagination"
 import Filter from "./components/Filter/Filter"
 import Navbar from "./components/Navbar/Navbar"
-let api = `https://rickandmortyapi.com/api/character/?page=1`
+let api = `https://rickandmortyapi.com/api/character/?page=1`;
+
 
 function App() {
   return (
@@ -19,6 +20,12 @@ function App() {
           Filter component will be placed here
           <div className="col-lg-8 col-12">
             Card component will be placed here
+    useEffect(() => {
+      (async function () {
+        let data = await fetch(api).then((res) => res.json());
+        console.log(data);
+      })();
+    }, [api]);
           </div>
         </div>
       </div>
