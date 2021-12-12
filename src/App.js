@@ -25,10 +25,15 @@ function App() {
       </div>
     </div>
   );
+
+  let [fetchedData, updateFetchedData] = useState([]);
+  let { info, results} = fetchedData;
+
   useEffect(() => {
     (async function () {
       let data = await fetch(api).then((res) => res.json());
-      console.log(data);
+      // console.log(data);
+      updateFetchedData(data);
     })();
   }, [api]);
 }
