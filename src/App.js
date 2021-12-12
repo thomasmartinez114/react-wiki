@@ -20,17 +20,17 @@ function App() {
           Filter component will be placed here
           <div className="col-lg-8 col-12">
             Card component will be placed here
-    useEffect(() => {
-      (async function () {
-        let data = await fetch(api).then((res) => res.json());
-        console.log(data);
-      })();
-    }, [api]);
           </div>
         </div>
       </div>
     </div>
   );
+  useEffect(() => {
+    (async function () {
+      let data = await fetch(api).then((res) => res.json());
+      console.log(data);
+    })();
+  }, [api]);
 }
 
 export default App;
