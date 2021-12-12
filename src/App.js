@@ -12,20 +12,6 @@ let api = `https://rickandmortyapi.com/api/character/?page=1`;
 
 
 function App() {
-  return (
-    <div className="App">
-      <h1 className="text-center mb-3">Characters</h1>
-      <div className="container">
-        <div className="row">
-          Filter component will be placed here
-          <div className="col-lg-8 col-12">
-            Card component will be placed here
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-
   let [fetchedData, updateFetchedData] = useState([]);
   let { info, results} = fetchedData;
 
@@ -37,5 +23,42 @@ function App() {
     })();
   }, [api]);
 }
+
+const Card = ({results}) => {
+  let display:
+
+  if (results) {
+    display = results.map((x) => {
+      let { id, image, name, status, location } = x;
+
+      return {
+        <div
+          key={id}
+          className="col-lg-4 col-md-6 col-sm-12 mb-4 position-relative text-dark"
+        >
+        </div>
+      };
+    });
+  }
+    else{
+      display = "No Characters Found:/";
+    }
+
+    return <>{display}</>;
+}
+  return (
+    <div className="App">
+      <h1 className="text-center mb-3">Characters</h1>
+      <div className="container">
+        <div className="row">
+          Filter component will be placed here
+          <div className="col-lg-8 col-12">
+            <Card results={results} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
 
 export default App;
