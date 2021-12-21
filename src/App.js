@@ -5,7 +5,8 @@ import "bootstrap/dist/js/bootstrap";
 // import Search from "./components/Search/Search"
 // import Card from "./components/Card/Card"
 // import Pagination from "./components/Pagination/Pagination"
-import Filters from './components/Filter/Filters';
+import Filters from './components/Filters/Filters';
+import Cards from './components/Cards/Cards';
 // import Navbar from "./components/Navbar/Navbar"
 // let api = `https://rickandmortyapi.com/api/character/?page=1`;
 
@@ -22,9 +23,7 @@ function App() {
           </div>
             <div className="col-8">
               <div className="row">
-                <div className="col-4">Cards</div>
-                <div className="col-4">Cards</div>
-                <div className="col-4">Cards</div>
+                <Cards />
               </div>
             </div>
           </div>
