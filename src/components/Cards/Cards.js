@@ -10,8 +10,10 @@ const Cards = ({ results }) => {
     // results.map(x) will target each item of the object
     display = results.map(x => {
       // destructure the x
-      let {id} = x
-      return( <div key={id} className="col-4">gasfh</div> )
+      let { id, name } = x
+      return( <div key={id} className="col-4">
+        {name}
+      </div> )
     });
   }
   else {
