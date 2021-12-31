@@ -14,7 +14,7 @@ const Cards = ({ results }) => {
       let { id, name, image, location, status} = x
       return(
         
-        <div key={id} className="col-4 position-relative">
+        <div key={id} className="col-4 mb-4 position-relative">
           <div className={styles.cards}>
             <img src={image} alt="" className={`${styles.img} img-fluid`} />
             <div className={`${styles.padding} content`}>
