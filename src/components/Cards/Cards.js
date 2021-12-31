@@ -25,23 +25,24 @@ const Cards = ({ results }) => {
               </div>
             </div>
           </div>
-          {()=>{
-            if(status === "Dead"){
-              return(
-                <div className={`${styles.badge} position-absolute badge bg-danger`}>{status}</div>
-              );
-            }
-            else if(status === "Alive") {
-              return(
-                <div className={`${styles.badge} position-absolute badge bg-danger`}>{status}</div>
-              );
-            }
-            else{
-              return(
-                <div className={`${styles.badge} position-absolute badge bg-secondary`}>{status}</div>
-              );
-            }
-          }}
+          {/* condtional statement for Status Badge */}
+          {(()=>{
+                if(status === "Dead"){
+                  return(
+                    <div className={`${styles.badge} position-absolute badge bg-danger`}>{status}</div>
+                  );
+                }
+                else if(status === "Alive") {
+                  return(
+                    <div className={`${styles.badge} position-absolute badge bg-success`}>{status}</div>
+                  );
+                }
+                else{
+                  return(
+                    <div className={`${styles.badge} position-absolute badge bg-secondary`}>{status}</div>
+                  );
+                }
+          })()}
           </div>
       );
     });
