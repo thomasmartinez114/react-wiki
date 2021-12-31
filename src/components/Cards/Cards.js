@@ -9,7 +9,9 @@ const Cards = ({ results }) => {
   if(results){
     // results.map(x) will target each item of the object
     display = results.map(x => {
-      return( <div className="col-4">gasfh</div> )
+      // destructure the x
+      let {id} = x
+      return( <div key={id} className="col-4">gasfh</div> )
     });
   }
   else {
