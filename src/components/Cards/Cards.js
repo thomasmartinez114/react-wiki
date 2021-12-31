@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import styles from "./Cards.module.scss";
 
 const Cards = ({ results }) => {
   // console.log(results);
@@ -10,10 +11,10 @@ const Cards = ({ results }) => {
     // results.map(x) will target each item of the object
     display = results.map(x => {
       // destructure the x
-      let { id, name, image, location, } = x
+      let { id, name, image, location, status} = x
       return(
         
-        <div key={id} className="col-4">
+        <div key={id} className="col-4 position-relative">
           <div className="">
             <img src={image} alt="" className="img-fluid" />
             <div className="content">
@@ -24,6 +25,7 @@ const Cards = ({ results }) => {
               </div>
             </div>
           </div>
+          <div className={`${styles.badge} position-absolute badge bg-danger`}>{status}</div>
         </div>
       );
     });
