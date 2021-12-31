@@ -8,10 +8,9 @@ import Cards from './components/Cards/Cards';
 
 function App() {
 
-  // this will bind to the pagination - setPageNumber will be the function to change page
+  // this will bind to the pagination - setPageNumber will be the function to change page and default page number is 1
   let [pageNumber, setPageNumber] = useState(1);
   let [fetchedData, updateFetchedData] = useState([]);
-  
   // this will destructure the api data to grab info and results data
   let { info, results } = fetchedData;
 
@@ -27,7 +26,7 @@ function App() {
       updateFetchedData(data);
     })();
 
-  }, [api])
+  }, [api]) /* [api] is a watch variable */ 
 
     return (
       <div className="App">
