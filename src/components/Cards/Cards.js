@@ -15,8 +15,8 @@ const Cards = ({ results }) => {
       return(
         
         <div key={id} className="col-4 position-relative">
-          <div className="">
-            <img src={image} alt="" className="img-fluid" />
+          <div className={styles.cards}>
+            <img src={image} alt="" className={`${styles.img} img-fluid`} />
             <div className="content">
               <div className="fs-4 fw-bold mb-4">{name}</div>
               <div className="">
