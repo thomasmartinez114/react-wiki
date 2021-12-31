@@ -10,6 +10,12 @@ function App() {
 
   // this will bind to the pagination - setPageNumber will be the function to change page
   let [pageNumber, setPageNumber] = useState(1);
+  let [fetchedData, updateFetchedData] = useState([]);
+  
+  // this will destructure the api data to grab info and results data
+  let { info, results } = fetchedData;
+
+  console.log(results);
   let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}`;
 
   useEffect(() => {
@@ -17,8 +23,9 @@ function App() {
     // IIFE (Immediately Invoked Func. Exp.)
     (async function() {
       let data = await fetch(api).then(res=>res.json())
-      console.log(data.results);
-    })()
+      // console.log(data.results);
+      updateFetchedData(data);
+    })();
 
   }, [api])
 
