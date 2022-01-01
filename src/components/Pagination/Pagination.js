@@ -3,28 +3,8 @@
 import React from 'react';
 import ReactPaginate from 'react-paginate';
 
-const Pagination = ({ pageNumber, setPageNumber }) => {
-  let next = () => {
-    setPageNumber(x => x + 1); // page count will increment by 1
-  };
-
-  let prev = () => {
-    if (pageNumber === 1) return;
-    setPageNumber(x => x - 1);
-  };
-
-  return (
-    <div>
-      <div className='container d-flex justify-content-center gap-5 my-5'>
-        <button onClick={prev} className='btn btn-primary'>
-          Prev
-        </button>
-        <button onClick={next} className='btn btn-primary'>
-          Next
-        </button>
-      </div>
-    </div>
-  );
+const Pagination = ({ info, pageNumber, setPageNumber }) => {
+  return <ReactPaginate pageCount={info.pages}/>;
 };
 
 export default Pagination;
