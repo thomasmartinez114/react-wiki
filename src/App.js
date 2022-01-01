@@ -5,6 +5,7 @@ import 'bootstrap/dist/js/bootstrap';
 import Filters from './components/Filters/Filters';
 import Cards from './components/Cards/Cards';
 import Pagination from './components/Pagination/Pagination';
+import Search from './components/Search/Search';
 
 function App() {
   // this will bind to the pagination - setPageNumber will be the function to change page and default page number is 1
@@ -32,6 +33,8 @@ function App() {
       <h1 className='text-center ubuntu my-4'>
         Rick & Morty <span className='text-primary'>WiKi</span>{' '}
       </h1>
+
+      <Search />
 
       <div className='container'>
         <div className='row'>
