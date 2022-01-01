@@ -14,7 +14,14 @@ export const Search = ({ setSearch, setPageNumber }) => {
         type='text'
         className={styles.input}
       />
-      <button className={`${styles.btn} btn btn-primary fs-5`}>Search</button>
+      <button
+        onClick={e => {
+          e.preventDefault();
+        }}
+        className={`${styles.btn} btn btn-primary fs-5`}
+      >
+        Search
+      </button>
     </form>
   );
 };
