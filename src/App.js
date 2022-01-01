@@ -10,14 +10,14 @@ import Search from './components/Search/Search';
 function App() {
   // this will bind to the pagination - setPageNumber will be the function to change page and default page number is 1
   let [pageNumber, setPageNumber] = useState(1);
-  // console.log(pageNumber);
+  let [search, setSearch] = useState("");
 
   let [fetchedData, updateFetchedData] = useState([]);
   // this will destructure the api data to grab info and results data
   let { info, results } = fetchedData;
 
   // console.log(results);
-  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}`;
+  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`;
 
   useEffect(() => {
     // IIFE (Immediately Invoked Func. Exp.)
@@ -34,7 +34,7 @@ function App() {
         Rick & Morty <span className='text-primary'>WiKi</span>{' '}
       </h1>
 
-      <Search />
+      <Search setPageNumber={setPageNumber} setSearch={setSearch} />
 
       <div className='container'>
         <div className='row'>
