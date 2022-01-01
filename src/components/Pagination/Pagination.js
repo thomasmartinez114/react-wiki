@@ -14,6 +14,9 @@ const Pagination = ({ info, pageNumber, setPageNumber }) => {
       previousClassName='btn btn-primary'
       pageClassName='page-item'
       pageLinkClassName='page-link'
+      onPageChange={(data) => {
+        console.log(data.selected);
+      }}
       pageCount={info?.pages} />
   )
 };
