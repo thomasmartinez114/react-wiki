@@ -8,11 +8,11 @@ const Gender = ({ setGender, setPageNumber }) => {
     <div className='accordion-item'>
       <h2 class='accordion-header' id='headingOne'>
         <button
-          class='accordion-button'
+          class='accordion-button collapsed'
           type='button'
           data-bs-toggle='collapse'
           data-bs-target='#collapseOne'
-          aria-expanded='true'
+          aria-expanded='false'
           aria-controls='collapseOne'
         >
           Gender
