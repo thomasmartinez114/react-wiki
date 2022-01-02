@@ -1,7 +1,7 @@
 import React from 'react';
 import FilterBTN from '../FilterBTN';
 
-const Gender = () => {
+const Gender = ({ setGender, setPageNumber }) => {
   let genders = ['female', 'male', 'genderless', 'unknown'];
 
   return (
@@ -26,7 +26,14 @@ const Gender = () => {
       >
         <div className='accordion-body d-flex flex-wrap gap-3'>
           {genders.map((items, index) => (
-            <FilterBTN key={index} name='gender' index={index} items={items} />
+            <FilterBTN
+              task={setGender}
+              setPageNumber={setPageNumber}
+              key={index}
+              name='gender'
+              index={index}
+              items={items}
+            />
           ))}
         </div>
       </div>
