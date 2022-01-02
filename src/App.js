@@ -19,7 +19,7 @@ function App() {
   // this will destructure the api data to grab info and results data
   let { info, results } = fetchedData;
 
-  // console.log(results);
+  // API
   let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}&status=${status}&gender=${gender}&species=${species}`;
 
   useEffect(() => {
@@ -41,7 +41,6 @@ function App() {
 
       <div className='container'>
         <div className='row'>
-          {/* filter for the status and set the page back to 1 */}
           <Filters
             setStatus={setStatus}
             setGender={setGender}
