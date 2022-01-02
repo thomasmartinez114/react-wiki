@@ -1,19 +1,37 @@
-import React from 'react'
+import React from 'react';
+import FilterBTN from '../FilterBTN';
 
 const Gender = () => {
-    return (
-        <div className="accordion-item">
-            <h2 class="accordion-header" id="headingOne">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-            Gender
-            </button>
-            </h2>
-            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                <div className="accordion-body">
-                </div>
-            </div>
-        </div>
-    )
-}
+  let genders = ['female', 'male', 'genderless', 'unknown'];
 
-export default Gender
+  return (
+    <div className='accordion-item'>
+      <h2 class='accordion-header' id='headingOne'>
+        <button
+          class='accordion-button'
+          type='button'
+          data-bs-toggle='collapse'
+          data-bs-target='#collapseOne'
+          aria-expanded='true'
+          aria-controls='collapseOne'
+        >
+          Gender
+        </button>
+      </h2>
+      <div
+        id='collapseOne'
+        class='accordion-collapse collapse show'
+        aria-labelledby='headingOne'
+        data-bs-parent='#accordionExample'
+      >
+        <div className='accordion-body'>
+          {genders.map((items, index) => (
+            <FilterBTN key={index} name='gender' index={index} items={items} />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Gender;
