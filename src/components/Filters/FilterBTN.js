@@ -1,6 +1,6 @@
 import React from 'react';
 
-const FilterBTN = ({ name, index, items }) => {
+const FilterBTN = ({ name, index, items, task, setPageNumber }) => {
   return (
     <div>
       <style jsx>
@@ -16,7 +16,11 @@ const FilterBTN = ({ name, index, items }) => {
       </style>
       <div class='form-check'>
         <input
-          class='form-check-input x'
+          onClick={() => {
+            setPageNumber(1);
+            task(items);
+          }}
+          className='form-check-input x'
           type='radio'
           name={name}
           id={`${name}-${index}`}

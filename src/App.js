@@ -10,14 +10,15 @@ import Search from './components/Search/Search';
 function App() {
   // this will bind to the pagination - setPageNumber will be the function to change page and default page number is 1
   let [pageNumber, setPageNumber] = useState(1);
-  let [search, setSearch] = useState("");
+  let [search, setSearch] = useState('');
+  let [status, setStatus] = useState('');
 
   let [fetchedData, updateFetchedData] = useState([]);
   // this will destructure the api data to grab info and results data
   let { info, results } = fetchedData;
 
   // console.log(results);
-  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`;
+  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}&status=${status}`;
 
   useEffect(() => {
     // IIFE (Immediately Invoked Func. Exp.)
@@ -38,7 +39,8 @@ function App() {
 
       <div className='container'>
         <div className='row'>
-            <Filters />
+          {/* filter for the status and set the page back to 1 */}
+          <Filters setStatus={setStatus} setPageNumber={setPageNumber} />
           <div className='col-8'>
             <div className='row'>
               <Cards results={results} />
@@ -47,7 +49,11 @@ function App() {
         </div>
       </div>
 
-      <Pagination info={info} pageNumber={pageNumber} setPageNumber={setPageNumber} />
+      <Pagination
+        info={info}
+        pageNumber={pageNumber}
+        setPageNumber={setPageNumber}
+      />
     </div>
   );
 }
