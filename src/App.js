@@ -8,7 +8,23 @@ import Pagination from './components/Pagination/Pagination';
 import Search from './components/Search/Search';
 import Navbar from './components/Navbar/Navbar';
 
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 function App() {
+  return (
+    <Router>
+      <div className='App'>
+        <Navbar />
+      </div>
+
+      <Routes>
+        <Route path='/' element={<Home />} />
+      </Routes>
+    </Router>
+  );
+}
+
+const Home = () => {
   // Setters for the pageNumber, serach, status, gender and species
   let [pageNumber, setPageNumber] = useState(1);
   let [search, setSearch] = useState('');
@@ -34,8 +50,6 @@ function App() {
 
   return (
     <div className='App'>
-      <Navbar />
-
       <Search setPageNumber={setPageNumber} setSearch={setSearch} />
 
       <div className='container'>
@@ -61,6 +75,6 @@ function App() {
       />
     </div>
   );
-}
+};
 
 export default App;
