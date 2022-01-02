@@ -1,4 +1,5 @@
 import React from 'react'
+import FilterBTN from '../FilterBTN';
 
 const Status = () => {
     return (
@@ -9,8 +10,8 @@ const Status = () => {
       </button>
     </h2>
     <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-      <div className="accordion-body">
-
+                <div className="accordion-body">
+                    <FilterBTN />
       </div>
     </div>
   </div>
