@@ -3,9 +3,9 @@ import React from 'react';
 const Navbar = () => {
   return (
     <nav class='navbar navbar-expand-lg navbar-light bg-light'>
-      <a class='navbar-brand' href='#'>
-        Navbar
-      </a>
+      <h1 className='fs-3 ubuntu navbar-brand'>
+        Rick & Morty <span className='text-primary'>WiKi</span>{' '}
+      </h1>
       <button
         class='navbar-toggler'
         type='button'
@@ -17,11 +17,11 @@ const Navbar = () => {
       >
         <span class='navbar-toggler-icon'></span>
       </button>
-      <div class='collapse navbar-collapse' id='navbarNav'>
+      <div class='collapse navbar-collapse justify-content-end' id='navbarNav'>
         <ul class='navbar-nav'>
           <li class='nav-item active'>
             <a class='nav-link' href='#'>
-              Home <span class='sr-only'>(current)</span>
+              Home
             </a>
           </li>
           <li class='nav-item'>

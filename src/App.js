@@ -35,9 +35,6 @@ function App() {
   return (
     <div className='App'>
       <Navbar />
-      <h1 className='text-center ubuntu my-4'>
-        Rick & Morty <span className='text-primary'>WiKi</span>{' '}
-      </h1>
 
       <Search setPageNumber={setPageNumber} setSearch={setSearch} />
 
