@@ -13,13 +13,14 @@ function App() {
   let [search, setSearch] = useState('');
   let [status, setStatus] = useState('');
   let [gender, setGender] = useState('');
+  let [species, setSpecies] = useState('');
 
   let [fetchedData, updateFetchedData] = useState([]);
   // this will destructure the api data to grab info and results data
   let { info, results } = fetchedData;
 
   // console.log(results);
-  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}&status=${status}&gender=${gender}`;
+  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}&status=${status}&gender=${gender}&species=${species}`;
 
   useEffect(() => {
     // IIFE (Immediately Invoked Func. Exp.)
@@ -44,6 +45,7 @@ function App() {
           <Filters
             setStatus={setStatus}
             setGender={setGender}
+            setSpecies={setSpecies}
             setPageNumber={setPageNumber}
           />
           <div className='col-8'>
