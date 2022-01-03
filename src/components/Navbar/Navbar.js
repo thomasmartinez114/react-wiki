@@ -4,7 +4,7 @@ import { NavLink, Link } from 'react-router-dom';
 const Navbar = () => {
   return (
     <nav class='navbar navbar-expand-lg navbar-light bg-light'>
-      <Link className='fs-3 ubuntu navbar-brand'>
+      <Link to='/' className='fs-3 ubuntu navbar-brand'>
         Rick & Morty <span className='text-primary'>WiKi</span>{' '}
       </Link>
       <button
