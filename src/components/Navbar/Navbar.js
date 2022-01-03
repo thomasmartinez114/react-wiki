@@ -1,9 +1,10 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
+import '../../App.css';
 
 const Navbar = () => {
   return (
-    <nav class='navbar navbar-expand-lg navbar-light bg-light'>
+    <nav class='navbar navbar-expand-lg navbar-light bg-light mb-4'>
       <Link to='/' className='fs-3 ubuntu navbar-brand'>
         Rick & Morty <span className='text-primary'>WiKi</span>{' '}
       </Link>
@@ -33,7 +34,7 @@ const Navbar = () => {
       </button>
       <div class='collapse navbar-collapse justify-content-end' id='navbarNav'>
         <div className='navbar-nav fs-5'>
-          <NavLink to='/' className='nav-link'>
+          <NavLink activeClassName='active' to='/' className='nav-link'>
             Characters
           </NavLink>
           <NavLink to='/episodes' className='nav-link'>
