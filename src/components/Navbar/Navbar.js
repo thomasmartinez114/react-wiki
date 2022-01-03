@@ -16,7 +16,8 @@ const Navbar = () => {
         aria-expanded='false'
         aria-label='Toggle navigation'
       >
-        <span class='navbar-toggler-icon'></span>
+        <i class='fas fa-bars open'></i>
+        <i class='fas fa-times close'></i>
       </button>
       <div class='collapse navbar-collapse justify-content-end' id='navbarNav'>
         <div className='navbar-nav fs-5'>
