@@ -1,11 +1,12 @@
 import React from 'react';
+import { NavLink, Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
     <nav class='navbar navbar-expand-lg navbar-light bg-light'>
-      <h1 className='fs-3 ubuntu navbar-brand'>
+      <Link className='fs-3 ubuntu navbar-brand'>
         Rick & Morty <span className='text-primary'>WiKi</span>{' '}
-      </h1>
+      </Link>
       <button
         class='navbar-toggler'
         type='button'
@@ -18,28 +19,17 @@ const Navbar = () => {
         <span class='navbar-toggler-icon'></span>
       </button>
       <div class='collapse navbar-collapse justify-content-end' id='navbarNav'>
-        <ul class='navbar-nav'>
-          <li class='nav-item active'>
-            <a class='nav-link' href='#'>
-              Home
-            </a>
-          </li>
-          <li class='nav-item'>
-            <a class='nav-link' href='#'>
-              Features
-            </a>
-          </li>
-          <li class='nav-item'>
-            <a class='nav-link' href='#'>
-              Pricing
-            </a>
-          </li>
-          <li class='nav-item'>
-            <a class='nav-link disabled' href='#'>
-              Disabled
-            </a>
-          </li>
-        </ul>
+        <div className='navbar-nav'>
+          <NavLink to='/' class='nav-link'>
+            Characters
+          </NavLink>
+          <NavLink to='/episodes' class='nav-link'>
+            Episodes
+          </NavLink>
+          <NavLink to='/location' class='nav-link'>
+            Location
+          </NavLink>
+        </div>
       </div>
     </nav>
   );
