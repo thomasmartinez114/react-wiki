@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import Cards from '../components/Cards/Cards';
 
 const Episodes = () => {
   let [id, setID] = useState(1);
   let [info, setInfo] = useState([]);
+  // results should match what we used in App.js
+  let [results, setResults] = useState([]);
   let { air_date, name } = info;
   let api = `https://rickandmortyapi.com/api/episode/${id}`;
 
@@ -10,6 +13,14 @@ const Episodes = () => {
     (async function () {
       let data = await fetch(api).then(res => res.json());
       setInfo(data);
+
+      // pull characters from episode
+      let episodeCharacters = await Promise.all(
+        data.characters.map(characterInfo => {
+          return fetch(characterInfo).then(res => res.json());
+        })
+      );
+      setResults(episodeCharacters);
     })();
   }, [api]);
   return (
@@ -27,7 +38,9 @@ const Episodes = () => {
       <div className='row'>
         <div className='col-3'>Pick Episodes</div>
         <div className='col-8'>
-          <div className='row'>Cards are here</div>
+          <div className='row'>
+            <Cards results={results} />
+          </div>
         </div>
       </div>
     </div>
