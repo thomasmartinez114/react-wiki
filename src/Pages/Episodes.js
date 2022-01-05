@@ -17,7 +17,8 @@ const Episodes = () => {
       <div className='row'>
         <h1 className='text-center mb-2'>
           {/* if name is blank then print Uknown, if not, put the Name */}
-          Episode: {name === '' ? 'Unknown' : name}
+          Episode:{' '}
+          <span className='text-primary'>{name === '' ? 'Unknown' : name}</span>
         </h1>
         <h5 className='text-center'>
           Air Date {air_date === '' ? 'Unknown' : air_date}
