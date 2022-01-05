@@ -15,8 +15,13 @@ const Episodes = () => {
   return (
     <div className='container'>
       <div className='row'>
-        <h1 className='text-center mb-2'>Episode: {name}</h1>
-        <h5 className='text-center'>Air Date {air_date}</h5>
+        <h1 className='text-center mb-2'>
+          {/* if name is blank then print Uknown, if not, put the Name */}
+          Episode: {name === '' ? 'Unknown' : name}
+        </h1>
+        <h5 className='text-center'>
+          Air Date {air_date === '' ? 'Unknown' : air_date}
+        </h5>
       </div>
       <div className='row'></div>
     </div>
