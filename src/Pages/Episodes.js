@@ -24,7 +24,12 @@ const Episodes = () => {
           Air Date {air_date === '' ? 'Unknown' : air_date}
         </h5>
       </div>
-      <div className='row'></div>
+      <div className='row'>
+        <div className='col-3'>Pick Episodes</div>
+        <div className='col-8'>
+          <div className='row'>Cards are here</div>
+        </div>
+      </div>
     </div>
   );
 };
