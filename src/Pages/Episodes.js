@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 const Episodes = () => {
   let [id, setID] = useState(1);
   let [info, setInfo] = useState([]);
-  console.log(info);
+  let { air_date, name } = info;
   let api = `https://rickandmortyapi.com/api/episode/${id}`;
 
   useEffect(() => {
@@ -12,7 +12,15 @@ const Episodes = () => {
       setInfo(data);
     })();
   }, [api]);
-  return <div>The episodes are here.</div>;
+  return (
+    <div className='container'>
+      <div className='row'>
+        <h1 className='text-center'></h1>
+        <h5 className='text-center'>Air Date {air_date}</h5>
+      </div>
+      <div className='row'></div>
+    </div>
+  );
 };
 
 export default Episodes;
