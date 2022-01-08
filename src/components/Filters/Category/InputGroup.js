@@ -1,6 +1,7 @@
 import React from 'react';
 
-const InputGroup = () => {
+const InputGroup = ({ total }) => {
+  console.log([...Array(total).keys()]);
   return (
     <div class='input-group mb-3'>
       <div class='input-group-prepend'> </div>
