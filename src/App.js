@@ -71,7 +71,7 @@ const Home = () => {
           />
           <div className='col-8'>
             <div className='row'>
-              <Cards results={results} />
+              <Cards page='/' results={results} />
             </div>
           </div>
         </div>
