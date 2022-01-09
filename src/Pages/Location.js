@@ -29,17 +29,20 @@ const Location = () => {
       <div className='row'>
         <h1 className='text-center mb-2'>
           {/* if name is blank then print Uknown, if not, put the Name */}
-          Location:{' '}
+          Location :{' '}
           <span className='text-primary'>{name === '' ? 'Unknown' : name}</span>
         </h1>
         <h5 className='text-center mb-4'>
-          Dimension: {dimension === '' ? 'Unknown' : dimension}
+          Dimension : {dimension === '' ? 'Unknown' : dimension}
         </h5>
+        <h6 className='text-center mb-4'>
+          Type : {type === '' ? 'Unknown' : type}
+        </h6>
       </div>
       <div className='row'>
         <div className='col-3'>
-          <h4 className='text-center mb-4'>Pick Episodes</h4>
-          <InputGroup setID={setID} name='Episode' total={51} />
+          <h4 className='text-center mb-4'>Pick Location</h4>
+          <InputGroup setID={setID} name='Location' total={126} />
         </div>
         <div className='col-8'>
           <div className='row'>
