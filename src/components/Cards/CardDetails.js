@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import InputGroup from '../Filters/Category/InputGroup';
 
 const CardDetails = () => {
   let { id } = useParams();
@@ -32,6 +33,29 @@ const CardDetails = () => {
             return <div className={'badge bg-secondary fs-5'}>{status}</div>;
           }
         })()}
+
+        <div className='contetn'>
+          <div className=''>
+            <span className='fw-bold'>Gender : </span>
+            {gender}
+          </div>
+          <div className=''>
+            <span className='fw-bold'>Species : </span>
+            {species}
+          </div>
+          <div className=''>
+            <span className='fw-bold'>Type : </span>
+            {type === '' ? 'Unknown' : type}
+          </div>
+          <div className=''>
+            <span className='fw-bold'>Location : </span>
+            {location?.name}
+          </div>
+          <div className=''>
+            <span className='fw-bold'>Origin : </span>
+            {origin?.name}
+          </div>
+        </div>
       </div>
     </div>
   );
