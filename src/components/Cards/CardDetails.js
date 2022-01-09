@@ -4,7 +4,8 @@ import { useParams } from 'react-router-dom';
 const CardDetails = () => {
   let { id } = useParams();
   let [fetchedData, updateFetchedData] = useState([]);
-  console.log(fetchedData);
+  let { name, image, origin, location, gender, species, status, type } =
+    fetchedData;
 
   let api = `https://rickandmortyapi.com/api/character/${id}`;
   useEffect(() => {
@@ -16,7 +17,24 @@ const CardDetails = () => {
     })();
   }, [api]);
 
-  return <div>The details of the card are here - {id}</div>;
+  return (
+    <div className='container d-flex justify-content-center'>
+      <div className='d-flex flex-column gap-3'>
+        <h1 className=''>{name}</h1>
+        <img src={image} alt='' className='img-fluid' />
+
+        {(() => {
+          if (status === 'Dead') {
+            return <div className='badge bg-danger fs-5'>{status}</div>;
+          } else if (status === 'Alive') {
+            return <div className={'badge bg-success fs-5'}>{status}</div>;
+          } else {
+            return <div className={'badge bg-secondary fs-5'}>{status}</div>;
+          }
+        })()}
+      </div>
+    </div>
+  );
 };
 
 export default CardDetails;
