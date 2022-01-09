@@ -29,11 +29,11 @@ const Location = () => {
       <div className='row'>
         <h1 className='text-center mb-2'>
           {/* if name is blank then print Uknown, if not, put the Name */}
-          Episode:{' '}
+          Location:{' '}
           <span className='text-primary'>{name === '' ? 'Unknown' : name}</span>
         </h1>
         <h5 className='text-center mb-4'>
-          {/* Air Date {air_date === '' ? 'Unknown' : air_date} */}
+          Dimension: {dimension === '' ? 'Unknown' : dimension}
         </h5>
       </div>
       <div className='row'>
